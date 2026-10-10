@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+  <defs>
+    <pattern id="g" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0 H0 V48" fill="none" stroke="#B8C2CC" stroke-width="1.5"/>
+    </pattern>
+    <radialGradient id="fade" cx="50%" cy="50%" r="50%">
+      <stop offset="0.3" stop-color="#fff"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <mask id="m"><rect width="1600" height="1100" fill="url(#fade)"/></mask>
+  </defs>
+  <g mask="url(#m)">
+    <rect width="1600" height="1100" fill="url(#g)" opacity="0.8"/>
+    <g fill="none" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" stroke="#1F9D61" opacity="0.35">
+      <path d="M800 1120 V700 L520 420 V-20"/>
+      <path d="M800 700 V-20"/>
+      <path d="M800 700 L1080 420 V-20"/>
+    </g>
+  </g>
+</svg>
