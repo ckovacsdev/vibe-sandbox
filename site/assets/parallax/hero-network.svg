@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <g fill="none" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M240 -20 V120 L420 300 V1020" stroke="#0E8C9B"/>
+    <path d="M1000 -20 V760 L1260 1020" stroke="#1F9D61"/>
+    <path d="M-20 760 H360 L880 240 H1460" stroke="#7B4FD1"/>
+    <path d="M-20 300 H420 L620 500 H1460" stroke="#2347D8"/>
+    <path d="M1460 840 H1150 L1000 690 L760 930 V1020" stroke="#D9412B"/>
+  </g>
+  <!-- station ticks -->
+  <g stroke-width="8" stroke-linecap="round">
+    <path d="M140 300 v-26 M280 300 v-26 M820 500 v26 M1220 500 v26 M1360 500 v-26" stroke="#2347D8"/>
+    <path d="M160 760 v26 M1080 240 v-26 M1260 240 v26" stroke="#7B4FD1"/>
+    <path d="M1000 120 h26 M1000 880 h0" stroke="#1F9D61"/>
+    <path d="M420 880 h-26" stroke="#0E8C9B"/>
+    <path d="M1320 840 v26" stroke="#D9412B"/>
+  </g>
+  <!-- interchanges -->
+  <g fill="#fff" stroke="#14213D" stroke-width="7">
+    <circle cx="420" cy="300" r="18"/>
+    <circle cx="420" cy="700" r="18"/>
+    <rect x="590" y="470" width="60" height="60" rx="30"/>
+    <circle cx="1000" cy="500" r="18"/>
+    <circle cx="1000" cy="690" r="18"/>
+    <circle cx="880" cy="240" r="18"/>
+  </g>
+  <g fill="#14213D" font-size="23" font-weight="600">
+    <text x="450" y="270">auth</text>
+    <text x="680" y="472">checkout-api</text>
+    <text x="1030" y="478">ledger</text>
+    <text x="900" y="208">search</text>
+    <text x="448" y="738">web-storefront</text>
+    <text x="1032" y="672">payments</text>
+    <text x="1180" y="560">inventory</text>
+    <text x="1040" y="132">notifications</text>
+    <text x="1270" y="900">billing-worker</text>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="920" viewBox="0 0 760 920" font-family="Helvetica Neue, Helvetica, Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-15%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#14213D" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect x="50" y="40" width="660" height="820" rx="20" fill="#fff" stroke="#CBD3DA" stroke-width="2" filter="url(#sh)"/>
+  <rect x="50" y="40" width="660" height="96" rx="20" fill="#14213D"/>
+  <rect x="50" y="110" width="660" height="26" fill="#14213D"/>
+  <circle cx="104" cy="88" r="14" fill="#1F9D61"/>
+  <text x="134" y="99" font-size="30" font-weight="700" fill="#fff">Golden path: node-service</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="24">
+    <text x="92" y="200" fill="#2347D8">template<tspan fill="#14213D">: node-service</tspan></text>
+    <text x="92" y="244" fill="#2347D8">version<tspan fill="#14213D">: 4.2.0</tspan></text>
+    <text x="92" y="300" fill="#2347D8">runtime<tspan fill="#14213D">: node22</tspan></text>
+    <text x="92" y="356" fill="#2347D8">ci<tspan fill="#14213D">:</tspan></text>
+    <text x="124" y="400" fill="#14213D">- lint</text>
+    <text x="124" y="444" fill="#14213D">- test --coverage 80</text>
+    <text x="124" y="488" fill="#14213D">- sbom</text>
+    <text x="92" y="544" fill="#2347D8">deploy<tspan fill="#14213D">:</tspan></text>
+    <text x="124" y="588" fill="#14213D">strategy: canary</text>
+    <text x="124" y="632" fill="#14213D">regions: [eu-west, us-east]</text>
+    <text x="92" y="688" fill="#2347D8">observability<tspan fill="#14213D">: datadog</tspan></text>
+    <text x="92" y="744" fill="#2347D8">owner<tspan fill="#14213D">: required</tspan></text>
+  </g>
+  <rect x="92" y="784" width="200" height="40" rx="20" fill="#DDEBE2"/>
+  <text x="192" y="812" font-size="22" font-weight="700" fill="#14613E" text-anchor="middle">38 services</text>
+</svg>

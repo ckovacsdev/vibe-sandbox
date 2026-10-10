@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<title>Pricing | Switchyard</title>
+<meta name="description" content="Switchyard pricing: free for up to 5 developers, per-developer pricing for teams, and custom terms for enterprises.">
+</head>
+<body data-page="pricing">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html" aria-label="Switchyard home">
+      <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#14213D"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
+      <span class="brand__name">Switchyard</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open menu">
+      <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
+    </button>
+    <nav class="nav" aria-label="Main">
+      <a href="features.html" data-page="features">Product</a>
+      <a href="pricing.html" data-page="pricing" aria-current="page">Pricing</a>
+      <a href="docs.html" data-page="docs">Docs</a>
+      <a href="security.html" data-page="security">Security</a>
+      <a href="about.html" data-page="about">Company</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="signin" href="#">Sign in</a>
+      <a class="btn btn--primary" href="contact.html?topic=demo">Book a demo</a>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap page-head__inner">
+      <h1>Priced per developer who ships</h1>
+      <p class="lead">You pay for engineers who deploy through Switchyard in a given month. Read-only users, bots and service accounts are free.</p>
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" data-period="annual" aria-pressed="true">Billed annually</button>
+        <button type="button" data-period="monthly" aria-pressed="false">Billed monthly</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="plans">
+        <div class="plan">
+          <div class="plan__name">Starter</div>
+          <div class="plan__price"><span class="plan__amount">$0</span><span class="plan__unit">for up to<br>5 developers</span></div>
+          <p class="muted">For a single team trying out paved paths on real services.</p>
+          <a class="btn btn--secondary btn--block" href="#">Create a free workspace</a>
+          <ul>
+            <li>Service catalog</li>
+            <li>3 golden paths</li>
+            <li>Preview environments, 10 at a time</li>
+            <li>GitHub or GitLab, one cluster</li>
+            <li>Community support</li>
+          </ul>
+        </div>
+        <div class="plan plan--featured">
+          <div class="plan__tag">Most teams choose this</div>
+          <div class="plan__name">Team</div>
+          <div class="plan__price"><span class="plan__amount" data-annual="$39" data-monthly="$47">$39</span><span class="plan__unit">per developer<br>per month</span></div>
+          <p class="muted">For engineering orgs standardising how every team builds and ships.</p>
+          <a class="btn btn--light btn--block" href="#">Start a 30-day trial</a>
+          <ul>
+            <li>Everything in Starter</li>
+            <li>Unlimited golden paths and environments</li>
+            <li>Deploy pipelines and scorecards</li>
+            <li>SAML SSO and role-based access</li>
+            <li>Audit log, 1 year retention</li>
+            <li>Email support, next business day</li>
+          </ul>
+        </div>
+        <div class="plan">
+          <div class="plan__name">Enterprise</div>
+          <div class="plan__price"><span class="plan__amount">Custom</span></div>
+          <p class="muted">For organisations with regulatory, residency or self-hosting requirements.</p>
+          <a class="btn btn--primary btn--block" href="contact.html?topic=sales">Talk to sales</a>
+          <ul>
+            <li>Everything in Team</li>
+            <li>SCIM provisioning and custom roles</li>
+            <li>Self-hosted or single-tenant in your VPC</li>
+            <li>EU or US data residency</li>
+            <li>99.95% uptime SLA</li>
+            <li>Named engineer and 1-hour critical response</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small muted" style="margin-top:16px">Prices in USD, before tax. Team pricing is billed on the highest number of active developers in each billing period; annual plans true up quarterly.</p>
+    </div>
+  </section>
+
+  <section class="section section--steel">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Compare plans</h2>
+      </div>
+      <div class="compare-scroll">
+        <table class="compare">
+          <thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">Starter</th><th scope="col">Team</th><th scope="col">Enterprise</th></tr></thead>
+          <tbody>
+            <tr class="group"><th colspan="4" scope="colgroup">Platform</th></tr>
+            <tr><th scope="row">Service catalog</th><td class="yes">Included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Golden paths</th><td>3</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><th scope="row">Concurrent preview environments</th><td>10</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><th scope="row">Deploy pipelines</th><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Scorecards and campaigns</th><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Cost attribution</th><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Connected clusters</th><td>1</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr class="group"><th colspan="4" scope="colgroup">Security and administration</th></tr>
+            <tr><th scope="row">SAML SSO</th><td class="no">Not included</td><td class="yes">Included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">SCIM provisioning</th><td class="no">Not included</td><td class="no">Not included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Custom roles</th><td class="no">Not included</td><td class="no">Not included</td><td class="yes">Included</td></tr>
+            <tr><th scope="row">Audit log retention</th><td>30 days</td><td>1 year</td><td>7 years, with export</td></tr>
+            <tr><th scope="row">Deployment model</th><td>Cloud</td><td>Cloud</td><td>Cloud, single-tenant or self-hosted</td></tr>
+            <tr><th scope="row">Data residency</th><td>US</td><td>US or EU</td><td>US, EU or custom</td></tr>
+            <tr class="group"><th colspan="4" scope="colgroup">Support and terms</th></tr>
+            <tr><th scope="row">Uptime SLA</th><td class="no">None</td><td>99.9%</td><td>99.95%</td></tr>
+            <tr><th scope="row">Support</th><td>Community</td><td>Email, next business day</td><td>24/7, 1-hour critical response</td></tr>
+            <tr><th scope="row">Onboarding</th><td>Self-serve</td><td>Guided setup call</td><td>Named platform engineer</td></tr>
+            <tr><th scope="row">Contract</th><td>Online terms</td><td>Online terms or MSA</td><td>Negotiated MSA</td></tr>
+            <tr><th scope="row">Payment</th><td class="no">None</td><td>Card or invoice</td><td>Invoice, PO, net 30 to 60</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>For procurement</h2>
+        <p class="lead">Everything your vendor review usually asks for, ready before the first call.</p>
+      </div>
+      <div class="facts">
+        <div><h3>Contracts</h3><p>Our standard MSA, DPA and order form are available for redlining. Enterprise customers can paper on their own terms.</p></div>
+        <div><h3>Security review</h3><p>SOC 2 Type II report, ISO 27001 certificate, pen test summary and a completed CAIQ, shared under NDA within one business day.</p></div>
+        <div><h3>Billing</h3><p>Annual or multi-year terms, invoiced in USD, EUR or GBP. We accept purchase orders and register in supplier portals such as Coupa and Ariba.</p></div>
+        <div><h3>Vendor details</h3><p>Switchyard, Inc. is a Delaware C corporation. W-9, insurance certificates and bank verification letters are available on request.</p></div>
+      </div>
+      <div class="btn-row" style="margin-top:40px">
+        <a class="btn btn--primary" href="contact.html?topic=security">Request the security package</a>
+        <a class="btn btn--secondary" href="security.html">Read the security overview</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--steel">
+    <div class="wrap split">
+      <div class="section-head">
+        <h2>Pricing questions</h2>
+        <p class="lead">Something else? <a href="contact.html?topic=sales">Ask the sales team</a>.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Who counts as an active developer?</summary>
+          <div><p>Anyone who creates a service, opens a preview environment, or triggers a deploy through Switchyard during the billing month. People who only browse the catalog, approve changes, or read dashboards are free.</p></div>
+        </details>
+        <details>
+          <summary>What happens when the trial ends?</summary>
+          <div><p>Your workspace moves to Starter. Nothing is deleted; services above Starter limits stay visible but read-only until you upgrade.</p></div>
+        </details>
+        <details>
+          <summary>Do you charge for infrastructure?</summary>
+          <div><p>No. Environments and pipelines run on your own clusters and cloud accounts, so compute is billed by your cloud provider at your negotiated rates.</p></div>
+        </details>
+        <details>
+          <summary>Is there a discount for startups or non-profits?</summary>
+          <div><p>Yes. Companies under 3 years old with less than $5M raised, and registered non-profits, get Team at 50% off for the first year.</p></div>
+        </details>
+        <details>
+          <summary>Can we leave, and take our data with us?</summary>
+          <div><p>Yes. Configuration already lives in your repos. Catalog data, audit logs and history export through the API or as a full JSON archive at any time, and we delete your data within 30 days of termination.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="index.html" aria-label="Switchyard home">
+          <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#fff"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#14213D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
+          <span class="brand__name">Switchyard</span>
+        </a>
+        <p>The internal developer platform for teams that would rather ship than file tickets.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="features.html#integrations">Integrations</a></li>
+          <li><a href="#">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Developers</h4>
+        <ul>
+          <li><a href="docs.html">Documentation</a></li>
+          <li><a href="docs.html#install">CLI</a></li>
+          <li><a href="#">API reference</a></li>
+          <li><a href="#">Status</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trust</h4>
+        <ul>
+          <li><a href="security.html">Security</a></li>
+          <li><a href="security.html#compliance">Compliance</a></li>
+          <li><a href="security.html#subprocessors">Subprocessors</a></li>
+          <li><a href="contact.html?topic=security">Request documents</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html#careers">Careers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Press kit</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>&copy; 2026 Switchyard, Inc.</span>
+      <span><a href="#">Terms</a>&nbsp;&nbsp;&nbsp;<a href="#">Privacy</a>&nbsp;&nbsp;&nbsp;<a href="#">DPA</a></span>
+      <a class="status-pill" href="#">All systems operational</a>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
