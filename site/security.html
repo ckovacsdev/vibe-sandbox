@@ -3,223 +3,73 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<title>Security | Switchyard</title>
+
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
-<title>Security | Switchyard</title>
-<meta name="description" content="How Switchyard protects your code and data: architecture, compliance, access control, encryption, availability and subprocessors.">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="security">
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-catalog" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></g>
+    <g id="i-paths" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="7" r="2.2"/><path d="M6 7.2v9.6M18 9.2c0 5.5-12 2.5-12 7.6"/></g>
+    <g id="i-envs" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5L12 3Z"/><path d="M2.5 12.3 12 17.3l9.5-5M2.5 16.3 12 21.3l9.5-5"/></g>
+    <g id="i-deploy" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5M6.5 10.5 12 5l5.5 5.5M5 21h14"/></g>
+    <g id="i-score" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.2 10"/></g>
+    <g id="i-cost" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20v-7M10 20V6M15 20v-9M20 20V9"/></g>
+    <g id="i-gear" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></g>
+    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></g>
+    <g id="i-mark-light"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M14 22v-7M14 15 9 7.5M14 15l5-7.5" fill="none" stroke="#0F2A22" stroke-width="2.6" stroke-linecap="round"/><circle cx="19" cy="7.5" r="2.8" fill="#12A36E"/></g>
+    <g id="i-mark"><rect width="28" height="28" rx="8" fill="#0F2A22"/><path d="M14 22v-7M14 15 9 7.5M14 15l5-7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="19" cy="7.5" r="2.8" fill="#12A36E"/></g>
+  </defs>
+</svg>
+
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap site-header__inner">
-    <a class="brand" href="index.html" aria-label="Switchyard home">
-      <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#14213D"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
-      <span class="brand__name">Switchyard</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open menu">
-      <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
-    </button>
+
+<header class="header">
+  <div class="wrap header__row">
+    <a class="brand" href="index.html" aria-label="Switchyard home"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-mark"/></svg>Switchyard</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 6h18M0 11h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
     <nav class="nav" aria-label="Main">
-      <a href="features.html" data-page="features">Product</a>
-      <a href="pricing.html" data-page="pricing">Pricing</a>
-      <a href="docs.html" data-page="docs">Docs</a>
-      <a href="security.html" data-page="security" aria-current="page">Security</a>
-      <a href="about.html" data-page="about">Company</a>
-      <a href="contact.html" data-page="contact">Contact</a>
+      <a href="product.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="docs.html">Docs</a>
+      <a href="security.html" aria-current="page">Security</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <div class="header-actions">
+    <div class="header__actions">
       <a class="signin" href="#">Sign in</a>
-      <a class="btn btn--primary" href="contact.html?topic=demo">Book a demo</a>
+      <a class="btn btn--solid" href="contact.html">Book a demo</a>
     </div>
   </div>
 </header>
-<main id="main">
 
-  <section class="page-head">
-    <div class="wrap page-head__inner">
-      <h1>Your code never leaves your cloud</h1>
-      <p class="lead">Switchyard is built so your security team can approve it quickly. Builds and deploys run inside your infrastructure; our control plane only sees metadata.</p>
-      <div class="btn-row">
-        <a class="btn btn--primary" href="contact.html?topic=security">Request the security package</a>
-        <a class="btn btn--secondary" href="#architecture">See the architecture</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="compliance">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Compliance</h2>
-        <p class="lead">Audited annually by independent firms. Reports and certificates are available under NDA.</p>
-      </div>
-      <div class="badges">
-        <div class="badge"><strong>SOC 2 Type II</strong><span>Security, availability and confidentiality. Audit period ends 30 June each year.</span></div>
-        <div class="badge"><strong>ISO 27001:2022</strong><span>Certified information security management system.</span></div>
-        <div class="badge"><strong>GDPR</strong><span>DPA with standard contractual clauses. EU data residency available.</span></div>
-        <div class="badge"><strong>HIPAA</strong><span>Business associate agreements on Enterprise plans.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--steel" id="architecture">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>How data flows</h2>
-        <p class="lead">The runner in your cluster does the work. It connects out to the control plane over TLS and never accepts inbound traffic.</p>
-      </div>
-      <div class="diagram">
-        <svg viewBox="0 0 960 400" role="img" aria-labelledby="arch-title arch-desc" font-family="Barlow, Arial, sans-serif">
-          <title id="arch-title">Switchyard architecture</title>
-          <desc id="arch-desc">Inside your cloud, the Switchyard runner talks to your Git provider, Kubernetes clusters and cloud APIs. It sends only metadata outbound over TLS to the Switchyard control plane, which serves the web app and API.</desc>
-          <rect x="10" y="10" width="560" height="380" rx="14" fill="#F5F7F8" stroke="#14213D" stroke-width="2" stroke-dasharray="8 6"/>
-          <text x="34" y="46" font-size="20" font-weight="700" fill="#14213D">Your cloud account</text>
-          <text x="34" y="70" font-size="15" fill="#44506A">Source, secrets, builds and workloads stay here</text>
-          <g font-size="17" font-weight="600" fill="#14213D">
-            <rect x="40" y="110" width="200" height="64" rx="8" fill="#fff" stroke="#CBD3DA" stroke-width="2"/><text x="60" y="148">Git repositories</text>
-            <rect x="40" y="196" width="200" height="64" rx="8" fill="#fff" stroke="#CBD3DA" stroke-width="2"/><text x="60" y="234">Kubernetes clusters</text>
-            <rect x="40" y="282" width="200" height="64" rx="8" fill="#fff" stroke="#CBD3DA" stroke-width="2"/><text x="60" y="320">Cloud and secrets</text>
-          </g>
-          <rect x="310" y="160" width="200" height="120" rx="10" fill="#14213D"/>
-          <text x="410" y="212" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">Switchyard runner</text>
-          <text x="410" y="240" font-size="15" fill="#B9C3D6" text-anchor="middle">Builds, deploys, scans</text>
-          <g stroke="#2347D8" stroke-width="6" fill="none" stroke-linecap="round">
-            <path d="M240 142 H275 V200 H310"/><path d="M240 228 H310"/><path d="M240 314 H275 V256 H310"/>
-          </g>
-          <path d="M540 220 H700" stroke="#F0A202" stroke-width="8" stroke-linecap="round"/>
-          <path d="M690 208 L708 220 L690 232" fill="none" stroke="#F0A202" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          <text x="622" y="204" font-size="15" font-weight="600" fill="#14213D" text-anchor="middle">Metadata only</text>
-          <text x="622" y="248" font-size="14" fill="#44506A" text-anchor="middle">Outbound TLS 1.3</text>
-          <rect x="720" y="140" width="230" height="160" rx="10" fill="#fff" stroke="#14213D" stroke-width="2"/>
-          <text x="740" y="180" font-size="20" font-weight="700" fill="#14213D">Control plane</text>
-          <text x="740" y="210" font-size="15" fill="#44506A">Web app, API, catalog</text>
-          <text x="740" y="236" font-size="15" fill="#44506A">AWS us-east-1 or eu-central-1</text>
-          <text x="740" y="262" font-size="15" fill="#44506A">or self-hosted</text>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Controls</h2>
-      </div>
-      <div class="facts">
-        <div><h3>Access</h3><p>SAML SSO with Okta, Entra ID and Google. SCIM provisioning, role-based access and just-in-time elevation for production actions.</p></div>
-        <div><h3>Encryption</h3><p>TLS 1.3 in transit. AES-256 at rest with per-tenant keys, and customer-managed keys through AWS KMS on Enterprise.</p></div>
-        <div><h3>Audit</h3><p>Every action by people, tokens and automation is logged, retained up to 7 years and streamable to your SIEM.</p></div>
-        <div><h3>Software supply chain</h3><p>Signed releases with SLSA level 3 provenance. SBOMs published for every runner version.</p></div>
-        <div><h3>Testing</h3><p>Annual third-party penetration tests, continuous scanning, and a public bug bounty program.</p></div>
-        <div><h3>People</h3><p>Background checks, security training at hire and yearly, and hardware keys required for all staff access.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--steel">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Availability</h2>
-        <p class="lead">If the control plane is unreachable, running workloads are unaffected and the runner queues events until it reconnects.</p>
-      </div>
-      <div class="facts">
-        <div><h3>99.95% SLA</h3><p>Monthly uptime commitment on Enterprise, with service credits. 99.99% measured over the last 12 months.</p></div>
-        <div><h3>Recovery</h3><p>Multi-zone deployment, point-in-time backups, recovery point under 5 minutes and recovery time under 1 hour.</p></div>
-        <div><h3>Incidents</h3><p>Customers are notified of security incidents affecting their data within 48 hours. Live status is published at status.switchyard.dev.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="subprocessors">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Subprocessors</h2>
-        <p class="lead">We give 30 days' notice before adding a subprocessor. <a href="contact.html?topic=security">Subscribe to updates</a>.</p>
-      </div>
-      <div class="table-scroll">
-        <table class="data-table">
-          <thead><tr><th scope="col">Subprocessor</th><th scope="col">Purpose</th><th scope="col">Data</th><th scope="col">Location</th></tr></thead>
-          <tbody>
-            <tr><td>Amazon Web Services</td><td>Hosting of the control plane</td><td>Customer metadata</td><td>US or EU</td></tr>
-            <tr><td>Cloudflare</td><td>Network edge and DDoS protection</td><td>Request metadata</td><td>Global</td></tr>
-            <tr><td>Stripe</td><td>Payment processing</td><td>Billing contacts</td><td>US</td></tr>
-            <tr><td>Zendesk</td><td>Support tickets</td><td>Support contacts and messages</td><td>US or EU</td></tr>
-            <tr><td>Postmark</td><td>Transactional email</td><td>User email addresses</td><td>US</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--ink">
-    <div class="wrap cta">
-      <div>
-        <h2>Send us your security questionnaire</h2>
-        <p class="lead">We return completed questionnaires within five business days, and most standard ones within two.</p>
-      </div>
-      <div class="btn-row">
-        <a class="btn btn--light" href="contact.html?topic=security">Contact the security team</a>
-      </div>
-    </div>
-  </section>
-
+<main id="main" class="wrap blank">
+  <h1>Security</h1>
+  <p>This page isn't written yet.</p>
+  <div class="btn-row"><a class="btn btn--line" href="index.html">Back to the homepage</a></div>
 </main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a class="brand" href="index.html" aria-label="Switchyard home">
-          <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#fff"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#14213D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
-          <span class="brand__name">Switchyard</span>
-        </a>
-        <p>The internal developer platform for teams that would rather ship than file tickets.</p>
-      </div>
-      <div>
-        <h4>Product</h4>
-        <ul>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="features.html#integrations">Integrations</a></li>
-          <li><a href="#">Changelog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Developers</h4>
-        <ul>
-          <li><a href="docs.html">Documentation</a></li>
-          <li><a href="docs.html#install">CLI</a></li>
-          <li><a href="#">API reference</a></li>
-          <li><a href="#">Status</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Trust</h4>
-        <ul>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="security.html#compliance">Compliance</a></li>
-          <li><a href="security.html#subprocessors">Subprocessors</a></li>
-          <li><a href="contact.html?topic=security">Request documents</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="about.html#careers">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Press kit</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__base">
-      <span>&copy; 2026 Switchyard, Inc.</span>
-      <span><a href="#">Terms</a>&nbsp;&nbsp;&nbsp;<a href="#">Privacy</a>&nbsp;&nbsp;&nbsp;<a href="#">DPA</a></span>
-      <a class="status-pill" href="#">All systems operational</a>
-    </div>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="index.html" aria-label="Switchyard home"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-mark-light"/></svg>Switchyard</a>
+    <nav aria-label="Footer">
+      <a href="product.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="docs.html">Docs</a>
+      <a href="security.html">Security</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="status" href="#">All systems operational</a>
+    <span>&copy; 2026 Switchyard, Inc.</span>
   </div>
 </footer>
-<script src="assets/js/site.js" defer></script>
+
+<script src="assets/home.js" defer></script>
 </body>
 </html>

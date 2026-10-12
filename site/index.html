@@ -3,203 +3,226 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="assets/img/mark.svg" type="image/svg+xml">
+<title>Switchyard, the internal developer platform</title>
+<meta name="description" content="Switchyard turns your platform team's standards into self-serve paths to production: new services, preview environments and safe deploys without tickets.">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
-<title>Switchyard, the internal developer platform</title>
-<meta name="description" content="Switchyard gives engineers self-serve services, preview environments and deploys on paved paths your platform team defines.">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
-<body data-page="home">
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-catalog" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></g>
+    <g id="i-paths" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="7" r="2.2"/><path d="M6 7.2v9.6M18 9.2c0 5.5-12 2.5-12 7.6"/></g>
+    <g id="i-envs" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 3 2.5 8 12 13l9.5-5L12 3Z"/><path d="M2.5 12.3 12 17.3l9.5-5M2.5 16.3 12 21.3l9.5-5"/></g>
+    <g id="i-deploy" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18V5M6.5 10.5 12 5l5.5 5.5M5 21h14"/></g>
+    <g id="i-score" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.2 10"/></g>
+    <g id="i-cost" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M5 20v-7M10 20V6M15 20v-9M20 20V9"/></g>
+    <g id="i-gear" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></g>
+    <g id="i-check" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></g>
+    <g id="i-mark-light"><rect width="28" height="28" rx="8" fill="#fff"/><path d="M14 22v-7M14 15 9 7.5M14 15l5-7.5" fill="none" stroke="#0F2A22" stroke-width="2.6" stroke-linecap="round"/><circle cx="19" cy="7.5" r="2.8" fill="#12A36E"/></g>
+    <g id="i-mark"><rect width="28" height="28" rx="8" fill="#0F2A22"/><path d="M14 22v-7M14 15 9 7.5M14 15l5-7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="19" cy="7.5" r="2.8" fill="#12A36E"/></g>
+  </defs>
+</svg>
+
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap site-header__inner">
-    <a class="brand" href="index.html" aria-label="Switchyard home">
-      <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#14213D"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
-      <span class="brand__name">Switchyard</span>
-    </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Open menu">
-      <svg width="20" height="14" viewBox="0 0 20 14" aria-hidden="true"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
-    </button>
+
+<header class="header">
+  <div class="wrap header__row">
+    <a class="brand" href="index.html" aria-label="Switchyard home"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-mark"/></svg>Switchyard</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-label="Open menu"><svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 1h18M0 6h18M0 11h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
     <nav class="nav" aria-label="Main">
-      <a href="features.html" data-page="features">Product</a>
-      <a href="pricing.html" data-page="pricing">Pricing</a>
-      <a href="docs.html" data-page="docs">Docs</a>
-      <a href="security.html" data-page="security">Security</a>
-      <a href="about.html" data-page="about">Company</a>
-      <a href="contact.html" data-page="contact">Contact</a>
+      <a href="product.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="docs.html">Docs</a>
+      <a href="security.html">Security</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <div class="header-actions">
+    <div class="header__actions">
       <a class="signin" href="#">Sign in</a>
-      <a class="btn btn--primary" href="contact.html?topic=demo">Book a demo</a>
+      <a class="btn btn--solid" href="contact.html">Book a demo</a>
     </div>
   </div>
 </header>
+
 <main id="main">
-
-  <section class="hero" id="hero">
-    <div class="wrap hero__grid">
-      <div class="hero__copy">
-        <h1>Every service on a paved track to production</h1>
-        <p class="lead">Switchyard is the internal developer platform that gives engineers new services, preview environments and safe deploys on their own, on paths your platform team defines once.</p>
-        <div class="btn-row">
-          <a class="btn btn--primary" href="contact.html?topic=demo">Book a demo</a>
-          <a class="btn btn--secondary" href="pricing.html">Start free for 5 developers</a>
-        </div>
-        <p class="hero__note">Runs in your cloud. SOC 2 Type II. SAML SSO on every paid plan.</p>
-      </div>
-      <div class="hero__media">
-        <div class="parallax" id="hero-scene">
-          <img class="parallax__fallback" src="assets/parallax/hero-network.svg" alt="">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--tight">
-    <div class="wrap logos" aria-label="Customers">
-      <p class="logos__label">Platform teams at 140 engineering orgs run on Switchyard</p>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="3"/></svg>Northwind</span>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 18 10 2l8 16z" fill="currentColor"/></svg>Halden Bank</span>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="16" height="16" rx="3" fill="currentColor"/></svg>Parcelry</span>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 10h16M10 2v16" stroke="currentColor" stroke-width="4"/></svg>Medisana Labs</span>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 16 8 4l4 8 2-4 4 8z" fill="currentColor"/></svg>Fjell</span>
-      <span class="logo-word"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="10" r="4" fill="currentColor"/><circle cx="14" cy="10" r="4" fill="currentColor"/></svg>Orbital Freight</span>
-    </div>
-  </section>
-
-  <section class="section section--steel">
+  <section class="hero">
     <div class="wrap">
-      <div class="section-head">
-        <h2>The timetable, before and after</h2>
-        <p class="lead">What routine engineering work takes when it goes through tickets, compared with self-serve on Switchyard.</p>
-      </div>
-      <table class="timetable">
-        <caption>Median times across 40 customer teams, measured in their first 90 days on Switchyard.</caption>
-        <thead>
-          <tr><th scope="col">Task</th><th scope="col">Before</th><th scope="col">With Switchyard</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>New service, from idea to first production deploy</td><td class="before"><span class="signal signal--red" aria-hidden="true"></span>12 days</td><td class="after"><span class="signal signal--green" aria-hidden="true"></span>25 minutes</td></tr>
-          <tr><td>Preview environment for a pull request</td><td class="before"><span class="signal signal--red" aria-hidden="true"></span>Half a day, by ticket</td><td class="after"><span class="signal signal--green" aria-hidden="true"></span>94 seconds</td></tr>
-          <tr><td>Find who owns a failing service</td><td class="before"><span class="signal signal--red" aria-hidden="true"></span>A Slack thread</td><td class="after"><span class="signal signal--green" aria-hidden="true"></span>One search</td></tr>
-          <tr><td>Roll a base image patch to every service</td><td class="before"><span class="signal signal--red" aria-hidden="true"></span>A sprint</td><td class="after"><span class="signal signal--green" aria-hidden="true"></span>One pull request</td></tr>
-          <tr><td>New engineer ships to production</td><td class="before"><span class="signal signal--red" aria-hidden="true"></span>Week three</td><td class="after"><span class="signal signal--green" aria-hidden="true"></span>Day one</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>One route from commit to customer</h2>
-        <p class="lead">Your platform team sets the route. Every engineer follows it without asking for access, waiting on a queue, or copying last year's pipeline.</p>
-      </div>
-      <ol class="route">
-        <li><span class="route__stop" aria-hidden="true"></span><h3>Pick a golden path</h3><p>Choose a template for the kind of service you need. Repo, CI, infrastructure and dashboards come with it.</p></li>
-        <li><span class="route__stop" aria-hidden="true"></span><h3>Push your code</h3><p>Builds, tests, SBOMs and policy checks run the same way for every team, in your cloud.</p></li>
-        <li><span class="route__stop" aria-hidden="true"></span><h3>Preview every pull request</h3><p>Each pull request gets a full environment with seeded data and a link reviewers can open.</p></li>
-        <li><span class="route__stop" aria-hidden="true"></span><h3>Promote to production</h3><p>Canary, verify and roll out by region, with automatic rollback when error budgets slip.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section section--steel" id="path-scene-wrap">
-    <div class="wrap split">
-      <div class="section-head section-head--flush">
-        <h2>Write the standard once. Every new service inherits it.</h2>
-        <p class="lead">Golden paths are versioned templates your platform team owns. Update one, and Switchyard opens upgrade pull requests on every service built from it.</p>
-        <p><a href="features.html#templates">How golden paths work</a></p>
-      </div>
-      <div class="scene-frame">
-        <div class="parallax" id="path-scene">
-          <img class="parallax__fallback" src="assets/parallax/path-template.svg" alt="" style="object-fit:contain">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap split">
-      <div>
-        <div class="section-head" style="margin-bottom:32px">
-          <h2>Six lines, one platform</h2>
-          <p class="lead">Use the whole system or start with the line that hurts most today.</p>
-        </div>
-        <ul class="lines">
-          <li style="--c: var(--line-catalog)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Service catalog</h3><p>Every service, owner, dependency and runbook in one searchable place, kept current from your repos.</p></div></li>
-          <li style="--c: var(--line-templates)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Golden paths</h3><p>Versioned templates for services, jobs and infrastructure, with upgrades delivered as pull requests.</p></div></li>
-          <li style="--c: var(--line-envs)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Environments</h3><p>Preview, staging and production on your Kubernetes clusters, created and torn down automatically.</p></div></li>
-          <li style="--c: var(--line-pipelines)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Deploy pipelines</h3><p>Progressive delivery with policy gates, approvals and rollback, defined as code.</p></div></li>
-          <li style="--c: var(--line-scorecards)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Scorecards</h3><p>Grade services on security, reliability and ownership standards, and track them as they improve.</p></div></li>
-          <li style="--c: var(--line-cost)"><span class="lines__swatch" aria-hidden="true"></span><div><h3>Cost and ownership</h3><p>Cloud spend broken down by service and team, next to the people who can change it.</p></div></li>
-        </ul>
-      </div>
-      <div class="window" role="img" aria-label="The Switchyard service catalog, listing services with their owners, status and scorecard grades">
-        <div class="window__bar"><span class="window__dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="window__title">Service catalog</span></div>
-        <div class="window__body">
-          <div class="window__side">
-            <span class="is-on" style="--c: var(--line-catalog)"><i></i>Catalog</span>
-            <span style="--c: var(--line-templates)"><i></i>Golden paths</span>
-            <span style="--c: var(--line-envs)"><i></i>Environments</span>
-            <span style="--c: var(--line-pipelines)"><i></i>Deploys</span>
-            <span style="--c: var(--line-scorecards)"><i></i>Scorecards</span>
-            <span style="--c: var(--line-cost)"><i></i>Cost</span>
-          </div>
-          <div class="window__main">
-            <div class="window__toolbar"><span class="window__search">Search 214 services</span><span class="window__chip">Team: Payments</span></div>
-            <table class="svc">
-              <thead><tr><th>Service</th><th>Owner</th><th>Status</th><th>Grade</th><th>Last deploy</th></tr></thead>
-              <tbody>
-                <tr><td>checkout-api</td><td>Payments</td><td><span class="status">Healthy</span></td><td><span class="grade grade--a">A</span></td><td>2 min ago</td></tr>
-                <tr><td>ledger</td><td>Payments</td><td><span class="status">Healthy</span></td><td><span class="grade grade--a">A</span></td><td>1 h ago</td></tr>
-                <tr><td>billing-worker</td><td>Payments</td><td><span class="status" style="--c: var(--line-envs)">Deploying</span></td><td><span class="grade grade--b">B</span></td><td>now</td></tr>
-                <tr><td>fraud-score</td><td>Risk</td><td><span class="status">Healthy</span></td><td><span class="grade grade--c">C</span></td><td>3 days ago</td></tr>
-                <tr><td>payouts</td><td>Payments</td><td><span class="status">Healthy</span></td><td><span class="grade grade--a">A</span></td><td>yesterday</td></tr>
-                <tr><td>refunds-api</td><td>Payments</td><td><span class="status">Healthy</span></td><td><span class="grade grade--b">B</span></td><td>4 h ago</td></tr>
-              </tbody>
-            </table>
+      <div class="hero__head">
+        <h1><span>Build the road once.</span> <span>Every team ships on it.</span></h1>
+        <div class="hero__row">
+          <p>Switchyard is the internal developer platform that turns your platform team's standards into self-serve paths to production. New services, preview environments and safe deploys, with no tickets in between.</p>
+          <div class="hero__cta">
+            <div class="btn-row">
+              <a class="btn btn--solid" href="contact.html">Book a demo</a>
+              <a class="btn btn--line" href="pricing.html">Start free</a>
+            </div>
+            <p class="hero__note">Free for up to 5 developers. Runs in your own cloud.</p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="wrap stage" id="stage">
+      <div class="stage__frame" role="img" aria-label="The Switchyard app showing a canary rollout of checkout-api at 50 percent with healthy metrics, alongside a ready preview environment, an A grade scorecard, and a terminal creating a new service in about four minutes.">
+        <div class="rig" aria-hidden="true">
+          <div class="floor" data-layer="floor"></div>
+
+          <div class="win" data-layer="win">
+            <div class="win__body">
+              <div class="ui-bar">
+                <span class="ui-dots"><i></i><i></i><i></i></span>
+                <span class="ui-crumbs">acme / payments / <b>checkout-api</b></span>
+                <span class="ui-people"><i style="--c:#12A36E"></i><i style="--c:#E5A019"></i><i style="--c:#0F2A22"></i></span>
+              </div>
+              <div class="ui-main">
+                <div class="ui-side">
+                  <div class="ui-org"><i></i>Acme</div>
+                  <span class="ui-nav"><svg viewBox="0 0 24 24"><use href="#i-catalog"/></svg>Catalog</span>
+                  <span class="ui-nav"><svg viewBox="0 0 24 24"><use href="#i-paths"/></svg>Golden paths</span>
+                  <span class="ui-nav"><svg viewBox="0 0 24 24"><use href="#i-envs"/></svg>Environments</span>
+                  <span class="ui-nav is-on"><svg viewBox="0 0 24 24"><use href="#i-deploy"/></svg>Deploys</span>
+                  <span class="ui-nav"><svg viewBox="0 0 24 24"><use href="#i-score"/></svg>Scorecards</span>
+                  <span class="ui-nav"><svg viewBox="0 0 24 24"><use href="#i-cost"/></svg>Cost</span>
+                  <span class="ui-nav ui-nav--end"><svg viewBox="0 0 24 24"><use href="#i-gear"/></svg>Settings</span>
+                </div>
+                <div class="ui-content">
+                  <div class="ui-title">
+                    <h4>checkout-api</h4>
+                    <span class="ui-tag">Tier 1</span>
+                    <span class="ui-tag">team-payments</span>
+                    <span class="ui-pill ui-pill--amber">Rolling out v413</span>
+                    <span class="ui-actions"><span class="ui-btn">Roll back</span><span class="ui-btn ui-btn--dark">Promote</span></span>
+                  </div>
+
+                  <div class="ui-card ui-rollout">
+                    <h5>Canary rollout to prod-eu</h5>
+                    <div class="ui-track">
+                      <div class="ui-step" style="--fill:100%"><span></span><b>5%</b>Verified</div>
+                      <div class="ui-step" style="--fill:100%"><span></span><b>25%</b>Verified</div>
+                      <div class="ui-step is-live" style="--fill:64%"><span></span><b>50%</b>Verifying, 3 min left</div>
+                      <div class="ui-step"><span></span><b>100%</b>Waiting</div>
+                    </div>
+                    <div class="ui-metrics">
+                      <div class="ui-metric"><small>Error rate</small><strong>0.08%</strong>
+                        <svg viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,20 10,21 20,19 30,22 40,20 50,21 60,19 70,20 80,21 90,20 100,21" fill="none" stroke="#12A36E" stroke-width="1.8" vector-effect="non-scaling-stroke"/></svg></div>
+                      <div class="ui-metric"><small>p95 latency</small><strong>182 ms</strong>
+                        <svg viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,14 10,12 20,15 30,11 40,13 50,10 60,13 70,12 80,14 90,11 100,12" fill="none" stroke="#12A36E" stroke-width="1.8" vector-effect="non-scaling-stroke"/></svg></div>
+                      <div class="ui-metric"><small>Requests</small><strong>12.4k/min</strong>
+                        <svg viewBox="0 0 100 28" preserveAspectRatio="none"><polyline points="0,22 10,20 20,18 30,19 40,15 50,14 60,11 70,12 80,9 90,8 100,6" fill="none" stroke="#0F2A22" stroke-width="1.8" vector-effect="non-scaling-stroke"/></svg></div>
+                    </div>
+                  </div>
+
+                  <div class="ui-envs">
+                    <div class="ui-card" style="padding:16px">
+                      <h5>Environments</h5>
+                      <div style="display:grid; gap:8px">
+                        <div class="ui-env"><b>prod-eu</b><span>v412 + canary</span></div>
+                        <div class="ui-env"><b>prod-us</b><span>v412</span></div>
+                        <div class="ui-env"><b>staging</b><span>v413</span></div>
+                        <div class="ui-env"><b>pr-482</b><span>preview</span></div>
+                      </div>
+                    </div>
+                    <div class="ui-card" style="padding:16px">
+                      <h5>Owner</h5>
+                      <div style="display:grid; gap:4px; font-size:13px"><b style="font-size:14px">team-payments</b><span class="muted">On call: Priya Raman</span><span class="muted">Runbook and dashboards linked</span></div>
+                    </div>
+                  </div>
+
+                  <div class="ui-card ui-deploys">
+                    <h5>Recent deploys</h5>
+                    <table class="ui-table">
+                      <tr><td>v412</td><td>Split tax lines on invoices</td><td><span class="ui-ok">Live</span></td><td>2 h ago</td></tr>
+                      <tr><td>v411</td><td>Retry idempotent captures</td><td><span class="ui-ok">Live</span></td><td>Yesterday</td></tr>
+                      <tr><td>v410</td><td>Upgrade to node-service 4.2</td><td><span class="ui-ok">Live</span></td><td>Mon</td></tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-preview" data-layer="preview">
+            <div class="panel">
+              <div class="panel__head"><strong>Preview ready</strong><span class="ui-pill ui-pill--jade">Live</span></div>
+              <p class="muted">pr-482, feature/split-payments</p>
+              <div class="panel__foot"><span class="muted">Ready in <b>94 s</b></span><span class="ui-btn ui-btn--dark">Open preview</span></div>
+            </div>
+          </div>
+
+          <div class="p-score" data-layer="score">
+            <div class="panel">
+              <div class="panel__head"><span><strong>Scorecard</strong><br><span class="muted">checkout-api meets 12 of 12</span></span><span class="grade">A</span></div>
+              <ul class="checks">
+                <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>SBOM published</li>
+                <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>On-call rotation assigned</li>
+                <li><svg viewBox="0 0 24 24"><use href="#i-check"/></svg>SLOs defined and met</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="p-term" data-layer="term">
+            <div class="panel panel--term">
+              <div class="term__bar"><i></i><i></i><i></i></div>
+<pre class="term"><span class="p">$</span> <span class="hi">sy create orders-api --path node-service</span>
+<span class="ok">✓</span> Repository   <span class="dim">acme/orders-api</span>
+<span class="ok">✓</span> Pipeline     <span class="dim">lint, test, sbom, deploy</span>
+<span class="ok">✓</span> Preview      <span class="dim">orders-api-pr-1.acme.dev</span>
+<span class="hi">Live in staging in 4m 12s</span></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="section section--steel">
+  <section class="customers">
+    <div class="wrap customers__row">
+      <p>Used by platform teams at</p>
+      <span class="wordmark"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="3"/></svg>Northwind</span>
+      <span class="wordmark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 17 10 3l8 14z" fill="currentColor"/></svg>Halden Bank</span>
+      <span class="wordmark"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4" fill="currentColor"/></svg>Parcelry</span>
+      <span class="wordmark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h14M10 3v14" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/></svg>Medisana</span>
+      <span class="wordmark"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="6.5" cy="10" r="4" fill="currentColor"/><circle cx="13.5" cy="10" r="4" fill="currentColor" opacity=".55"/></svg>Orbital</span>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <h2>What each approver needs to say yes</h2>
-        <p class="lead">Buying a platform involves engineering leadership, the people who will run it, and the people who sign for it. Here's where each of them can start.</p>
+      <div class="section-intro">
+        <h2>Your platform team writes the standard. Everyone else just runs it.</h2>
       </div>
-      <div class="approvers">
-        <div>
-          <h3>Engineering leadership</h3>
-          <ul>
-            <li>Lead time and deploy frequency, tracked per team from day one</li>
-            <li>Typical payback inside two quarters on platform headcount alone</li>
-            <li>Adoption reporting you can take to the board</li>
-          </ul>
-          <a href="contact.html?topic=demo">Get an ROI model for your org</a>
+      <div class="pair">
+        <div class="pair__item">
+          <h3>Platform team</h3>
+          <p>Define a golden path once: repo layout, CI, infrastructure, observability and policy. Version it like any other code.</p>
+<pre class="code code--light"><span class="c"># paths/node-service.yaml</span>
+<span class="k">name</span>: node-service
+<span class="k">version</span>: 4.2.0
+<span class="k">ci</span>: [lint, test --coverage 80, sbom]
+<span class="k">deploy</span>:
+  <span class="k">strategy</span>: canary
+  <span class="k">verify</span>: { error_rate: "&lt; 0.5%", p95: "&lt; 300ms" }
+<span class="k">require</span>:
+  - owner
+  - oncall
+  - slo</pre>
         </div>
-        <div>
-          <h3>Platform and tech leads</h3>
-          <ul>
-            <li>Config as code in your repos, with no proprietary DSL</li>
-            <li>Runs on the Kubernetes, Terraform and CI you already have</li>
-            <li>Open API and CLI, with full export if you ever leave</li>
-          </ul>
-          <a href="docs.html">Read the docs</a>
-        </div>
-        <div>
-          <h3>Security and procurement</h3>
-          <ul>
-            <li>SOC 2 Type II and ISO 27001, report available under NDA</li>
-            <li>Source code never leaves your cloud</li>
-            <li>Standard MSA and DPA, annual invoicing, purchase orders accepted</li>
-          </ul>
-          <a href="security.html">Review security and compliance</a>
+        <div class="pair__item">
+          <h3>Every engineer</h3>
+          <p>Create a compliant service with one command. Every pull request gets a preview, and every merge rolls out safely.</p>
+<pre class="code code--dark"><span class="p">$</span> <span class="hi">sy create orders-api --path node-service</span>
+<span class="ok">✓</span> Repository   <span class="dim">acme/orders-api</span>
+<span class="ok">✓</span> Pipeline     <span class="dim">lint, test, sbom, deploy</span>
+<span class="ok">✓</span> Catalog      <span class="dim">owner team-fulfilment</span>
+
+<span class="p">$</span> <span class="hi">git push origin feature/first-endpoint</span>
+<span class="ok">✓</span> Preview      <span class="dim">orders-api-pr-1.acme.dev</span>
+
+<span class="hi">Live in staging in 4m 12s</span></pre>
         </div>
       </div>
     </div>
@@ -207,82 +230,109 @@
 
   <section class="section">
     <div class="wrap">
-      <figure class="quote" style="margin:0">
-        <blockquote>We had a platform team of six answering tickets all day. Now they ship golden paths, and the other 300 engineers don't wait on anyone to get to production.</blockquote>
-        <figcaption><span class="avatar" style="--c: var(--line-pipelines)" aria-hidden="true">MO</span><span><strong>Maya Okafor</strong><br><span class="muted">VP Engineering, Parcelry</span></span></figcaption>
+      <div class="statement">
+        <p>New services go from idea to production in 25 minutes instead of 12 days, and new engineers deploy on their first day.</p>
+        <p>Median across 40 customer teams in their first 90 days on Switchyard.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2>Everything between commit and customer</h2>
+        <p>Use the whole platform, or start with the part that slows your teams down most today.</p>
+      </div>
+      <div class="caps">
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-catalog"/></svg><h3>Service catalog</h3><p>Every service, owner and dependency in one place, kept current from your repos and clusters.</p></div>
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-paths"/></svg><h3>Golden paths</h3><p>Versioned templates, with upgrades sent as pull requests to every service built from them.</p></div>
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-envs"/></svg><h3>Preview environments</h3><p>A full environment for every pull request, ready in about 90 seconds and removed on merge.</p></div>
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-deploy"/></svg><h3>Progressive delivery</h3><p>Canary rollouts verified against your own metrics, with automatic rollback.</p></div>
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-score"/></svg><h3>Scorecards</h3><p>See every service graded against your security and reliability standards.</p></div>
+        <div class="cap"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cost"/></svg><h3>Cost by owner</h3><p>Cloud spend broken down by service and team, next to the people who can change it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="reviews">
+        <div class="section-intro">
+          <h2>Built to pass every review</h2>
+          <p>Engineering leaders, the people who run the platform, and the people who sign for it each get what they need to say yes.</p>
+        </div>
+        <div class="reviews__grid">
+          <div class="review">
+            <h3>Engineering leadership</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Lead time and deploy frequency per team, from the first week</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Adoption reporting across every team and org</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Per-developer pricing that scales with use</li>
+            </ul>
+            <a href="contact.html">Get an ROI estimate</a>
+          </div>
+          <div class="review">
+            <h3>Platform and tech leads</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Configuration lives in your repos as plain YAML</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Runs on your Kubernetes, Terraform and CI</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Full API, CLI and data export</li>
+            </ul>
+            <a href="docs.html">Read the docs</a>
+          </div>
+          <div class="review">
+            <h3>Security and procurement</h3>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Source code and secrets never leave your cloud</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>SOC 2 Type II, SAML SSO and audit logs</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg>Standard MSA and DPA, invoicing and purchase orders</li>
+            </ul>
+            <a href="security.html">Review security</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <figure class="quote">
+        <blockquote>We had six platform engineers answering tickets all day. Now they build golden paths, and our other 300 engineers get to production without waiting on anyone.</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">MO</span><span><strong>Maya Okafor</strong><span class="muted">VP Engineering, Parcelry</span></span></figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="section section--ink">
-    <div class="wrap cta">
+  <section class="close">
+    <div class="wrap close__inner">
       <div>
-        <h2>See your own services on Switchyard</h2>
-        <p class="lead">A 30-minute call with a platform engineer. Bring a repo; we'll import it live.</p>
+        <h2>See Switchyard on your own services</h2>
+        <p>A 30-minute call with a platform engineer. Bring a repo and we'll import it live.</p>
       </div>
       <div class="btn-row">
-        <a class="btn btn--light" href="contact.html?topic=demo">Book a demo</a>
-        <a class="btn btn--ghost-light" href="pricing.html">See pricing</a>
+        <a class="btn btn--light" href="contact.html">Book a demo</a>
+        <a class="btn btn--ghost" href="pricing.html">See pricing</a>
       </div>
     </div>
   </section>
-
 </main>
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <a class="brand" href="index.html" aria-label="Switchyard home">
-          <svg class="brand__mark" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="7" fill="#fff"/><path d="M10 26V15M10 15V4M10 15l9-9" fill="none" stroke="#14213D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="3" fill="#F0A202"/></svg>
-          <span class="brand__name">Switchyard</span>
-        </a>
-        <p>The internal developer platform for teams that would rather ship than file tickets.</p>
-      </div>
-      <div>
-        <h4>Product</h4>
-        <ul>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="features.html#integrations">Integrations</a></li>
-          <li><a href="#">Changelog</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Developers</h4>
-        <ul>
-          <li><a href="docs.html">Documentation</a></li>
-          <li><a href="docs.html#install">CLI</a></li>
-          <li><a href="#">API reference</a></li>
-          <li><a href="#">Status</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Trust</h4>
-        <ul>
-          <li><a href="security.html">Security</a></li>
-          <li><a href="security.html#compliance">Compliance</a></li>
-          <li><a href="security.html#subprocessors">Subprocessors</a></li>
-          <li><a href="contact.html?topic=security">Request documents</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="about.html#careers">Careers</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Press kit</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__base">
-      <span>&copy; 2026 Switchyard, Inc.</span>
-      <span><a href="#">Terms</a>&nbsp;&nbsp;&nbsp;<a href="#">Privacy</a>&nbsp;&nbsp;&nbsp;<a href="#">DPA</a></span>
-      <a class="status-pill" href="#">All systems operational</a>
-    </div>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <a class="brand" href="index.html" aria-label="Switchyard home"><svg viewBox="0 0 28 28" aria-hidden="true"><use href="#i-mark-light"/></svg>Switchyard</a>
+    <nav aria-label="Footer">
+      <a href="product.html">Product</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="docs.html">Docs</a>
+      <a href="security.html">Security</a>
+      <a href="company.html">Company</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="status" href="#">All systems operational</a>
+    <span>&copy; 2026 Switchyard, Inc.</span>
   </div>
 </footer>
-<script src="assets/js/site.js" defer></script>
-<script type="module" src="assets/js/scenes.js"></script>
+
+<script src="assets/home.js" defer></script>
 </body>
 </html>
