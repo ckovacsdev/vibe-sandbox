@@ -76,7 +76,7 @@
               <div class="ui-bar">
                 <span class="ui-dots"><i></i><i></i><i></i></span>
                 <span class="ui-crumbs">acme / payments / <b>checkout-api</b></span>
-                <span class="ui-people"><i style="--c:#12A36E"></i><i style="--c:#E5A019"></i><i style="--c:#0F2A22"></i></span>
+                <span class="ui-people"><i style="--c:#12A36E"></i><i style="--c:#E5A019"></i><i style="--c:#6B5BE6"></i></span>
               </div>
               <div class="ui-main">
                 <div class="ui-side">
@@ -94,6 +94,7 @@
                     <h4>checkout-api</h4>
                     <span class="ui-tag">Tier 1</span>
                     <span class="ui-tag">team-payments</span>
+                    <span class="ui-tag ui-tag--path">node-service 4.2</span>
                     <span class="ui-pill ui-pill--amber">Rolling out v413</span>
                     <span class="ui-actions"><span class="ui-btn">Roll back</span><span class="ui-btn ui-btn--dark">Promote</span></span>
                   </div>
@@ -167,7 +168,7 @@
           <div class="p-term" data-layer="term">
             <div class="panel panel--term">
               <div class="term__bar"><i></i><i></i><i></i></div>
-<pre class="term"><span class="p">$</span> <span class="hi">sy create orders-api --path node-service</span>
+<pre class="term"><span class="p">$</span> <span class="hi">sy create orders-api <span class="path">--path node-service</span></span>
 <span class="ok">✓</span> Repository   <span class="dim">acme/orders-api</span>
 <span class="ok">✓</span> Pipeline     <span class="dim">lint, test, sbom, deploy</span>
 <span class="ok">✓</span> Preview      <span class="dim">orders-api-pr-1.acme.dev</span>
@@ -197,7 +198,7 @@
       </div>
       <div class="pair">
         <div class="pair__item">
-          <h3>Platform team</h3>
+          <h3 style="--c: var(--iris)">Platform team</h3>
           <p>Define a golden path once: repo layout, CI, infrastructure, observability and policy. Version it like any other code.</p>
 <pre class="code code--light"><span class="c"># paths/node-service.yaml</span>
 <span class="k">name</span>: node-service
@@ -212,9 +213,9 @@
   - slo</pre>
         </div>
         <div class="pair__item">
-          <h3>Every engineer</h3>
+          <h3 style="--c: var(--jade)">Every engineer</h3>
           <p>Create a compliant service with one command. Every pull request gets a preview, and every merge rolls out safely.</p>
-<pre class="code code--dark"><span class="p">$</span> <span class="hi">sy create orders-api --path node-service</span>
+<pre class="code code--dark"><span class="p">$</span> <span class="hi">sy create orders-api <span class="path">--path node-service</span></span>
 <span class="ok">✓</span> Repository   <span class="dim">acme/orders-api</span>
 <span class="ok">✓</span> Pipeline     <span class="dim">lint, test, sbom, deploy</span>
 <span class="ok">✓</span> Catalog      <span class="dim">owner team-fulfilment</span>
@@ -230,9 +231,49 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="statement">
-        <p>New services go from idea to production in 25 minutes instead of 12 days, and new engineers deploy on their first day.</p>
-        <p>Median across 40 customer teams in their first 90 days on Switchyard.</p>
+      <div class="section-intro">
+        <h2>The same new service, shipped two ways</h2>
+        <p>Same team, same code, same security standards. The only difference is whether each step waits in a queue or runs on a golden path.</p>
+      </div>
+
+      <div class="race" data-race>
+        <div class="race__col race__col--old">
+          <div class="race__head">
+            <div><h3>Through tickets</h3><p>5 handoffs across 4 teams</p></div>
+            <strong class="race__total">12 days</strong>
+          </div>
+          <ol class="run run--old">
+            <li><span class="run__node" aria-hidden="true"></span><div class="run__text"><b>Request a repository</b><span>Waits in the platform team's queue</span></div><time>Day 1</time></li>
+            <li><span class="run__node" aria-hidden="true"></span><div class="run__text"><b>Set up a CI pipeline</b><span>Copied from another repo and adjusted</span></div><time>Day 3</time></li>
+            <li><span class="run__node" aria-hidden="true"></span><div class="run__text"><b>Provision infrastructure</b><span>Ticket to the infrastructure team</span></div><time>Day 6</time></li>
+            <li><span class="run__node" aria-hidden="true"></span><div class="run__text"><b>Security review</b><span>Manual checklist, scheduled weekly</span></div><time>Day 9</time></li>
+            <li><span class="run__node" aria-hidden="true"></span><div class="run__text"><b>First production deploy</b><span>Booked into the next change window</span></div><time>Day 12</time></li>
+          </ol>
+        </div>
+
+        <div class="race__col race__col--new">
+          <div class="race__head">
+            <div><h3>On Switchyard</h3><p>One engineer, no handoffs</p></div>
+            <strong class="race__total"><span data-clock>25</span> min</strong>
+          </div>
+          <ol class="run run--new">
+            <li data-at="0"><span class="run__node" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="run__text"><b>Create from a golden path</b><span>One command, using the <span class="path-name">node-service</span> template</span></div><time>0 min</time></li>
+            <li data-at="4"><span class="run__node" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="run__text"><b>Repository, CI and infrastructure ready</b><span>Generated from the template your platform team owns</span></div><time>4 min</time></li>
+            <li data-at="11"><span class="run__node" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="run__text"><b>Preview environment live</b><span>Shared with reviewers on the first pull request</span></div><time>11 min</time></li>
+            <li data-at="19"><span class="run__node" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="run__text"><b>Security and policy checks passed</b><span>SBOM, secret scanning and SLOs, checked automatically</span></div><time>19 min</time></li>
+            <li data-at="25"><span class="run__node" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-check"/></svg></span><div class="run__text"><b>Live in production</b><span>Canary verified against error rate and latency</span></div><time>25 min</time></li>
+          </ol>
+          <button class="race__replay" type="button" hidden>Run again</button>
+        </div>
+
+        <div class="race__foot">
+          <dl class="race__facts">
+            <div><dt>3.4&times;</dt><dd>more deploys per team each week</dd></div>
+            <div><dt>61%</dt><dd>fewer tickets to the platform team</dd></div>
+            <div><dt>Day one</dt><dd>for new engineers' first production deploy</dd></div>
+          </dl>
+          <p>Medians across 40 customer teams in their first 90 days on Switchyard.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -296,10 +337,57 @@
 
   <section class="section">
     <div class="wrap">
-      <figure class="quote">
-        <blockquote>We had six platform engineers answering tickets all day. Now they build golden paths, and our other 300 engineers get to production without waiting on anyone.</blockquote>
-        <figcaption><span class="avatar" aria-hidden="true">MO</span><span><strong>Maya Okafor</strong><span class="muted">VP Engineering, Parcelry</span></span></figcaption>
-      </figure>
+      <div class="section-intro">
+        <h2>Platform teams that stopped answering tickets</h2>
+      </div>
+
+      <div class="story" data-story>
+        <figure class="story__quote">
+          <span class="wordmark story__brand"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="14" height="14" rx="4" fill="currentColor"/></svg>Parcelry</span>
+          <blockquote><p><span class="hang">&ldquo;</span>We had six platform engineers answering tickets all day. Now they build golden paths, and our other 300 engineers get to production without waiting on anyone.&rdquo;</p></blockquote>
+          <figcaption class="story__person"><span class="avatar" aria-hidden="true">MO</span><span><strong>Maya Okafor</strong><span class="muted">VP Engineering, Parcelry</span></span></figcaption>
+        </figure>
+
+        <div class="story__data">
+          <div class="story__card">
+            <div class="story__head"><b>Parcelry, first six months</b><span>320 engineers, 6 on the platform team</span></div>
+            <div class="metric">
+              <p class="metric__row"><strong>31</strong><span>platform tickets a week, down from 142</span></p>
+              <svg class="chart" viewBox="0 0 300 96" role="img" aria-label="Weekly platform tickets fall from 142 to 31 over 26 weeks after the Switchyard rollout.">
+                <defs><linearGradient id="g-tickets" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12A36E" stop-opacity=".2"/><stop offset="1" stop-color="#12A36E" stop-opacity="0"/></linearGradient></defs>
+                <path class="chart__rollout" d="M53.4 4 V96"/>
+                <text class="chart__label" x="58" y="91">Switchyard rollout</text>
+                <path class="chart__area" d="M8.0 18.5 L19.4 20.0 L30.7 15.7 L42.1 20.6 L53.4 16.7 L64.8 23.7 L76.2 31.2 L87.5 32.9 L98.9 40.4 L110.2 42.4 L121.6 48.2 L133.0 51.6 L144.3 53.5 L155.7 55.1 L167.0 60.4 L178.4 62.5 L189.8 63.5 L201.1 64.7 L212.5 67.4 L223.8 69.2 L235.2 69.1 L246.6 72.0 L257.9 71.0 L269.3 72.6 L280.6 73.1 L292.0 72.5 L292.0 96 L8.0 96 Z" fill="url(#g-tickets)"/>
+                <path class="chart__line" d="M8.0 18.5 L19.4 20.0 L30.7 15.7 L42.1 20.6 L53.4 16.7 L64.8 23.7 L76.2 31.2 L87.5 32.9 L98.9 40.4 L110.2 42.4 L121.6 48.2 L133.0 51.6 L144.3 53.5 L155.7 55.1 L167.0 60.4 L178.4 62.5 L189.8 63.5 L201.1 64.7 L212.5 67.4 L223.8 69.2 L235.2 69.1 L246.6 72.0 L257.9 71.0 L269.3 72.6 L280.6 73.1 L292.0 72.5" pathLength="1"/>
+                <circle class="chart__dot" cx="292" cy="72.5" r="4.5"/>
+              </svg>
+            </div>
+            <div class="metric">
+              <p class="metric__row"><strong>210</strong><span>deploys a week, up from 38</span></p>
+              <svg class="chart" viewBox="0 0 300 96" role="img" aria-label="Weekly production deploys rise from 38 to 210 over 26 weeks after the Switchyard rollout.">
+                <defs><linearGradient id="g-deploys" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12A36E" stop-opacity=".2"/><stop offset="1" stop-color="#12A36E" stop-opacity="0"/></linearGradient></defs>
+                <path class="chart__rollout" d="M53.4 4 V96"/>
+                <text class="chart__label" x="58" y="91">Switchyard rollout</text>
+                <path class="chart__area" d="M8.0 75.1 L19.4 74.3 L30.7 75.3 L42.1 74.7 L53.4 74.6 L64.8 69.0 L76.2 62.8 L87.5 59.2 L98.9 54.4 L110.2 49.3 L121.6 42.5 L133.0 39.9 L144.3 37.0 L155.7 31.9 L167.0 29.7 L178.4 28.1 L189.8 22.0 L201.1 20.5 L212.5 22.4 L223.8 18.1 L235.2 17.3 L246.6 13.3 L257.9 13.8 L269.3 17.1 L280.6 10.8 L292.0 15.0 L292.0 96 L8.0 96 Z" fill="url(#g-deploys)"/>
+                <path class="chart__line" d="M8.0 75.1 L19.4 74.3 L30.7 75.3 L42.1 74.7 L53.4 74.6 L64.8 69.0 L76.2 62.8 L87.5 59.2 L98.9 54.4 L110.2 49.3 L121.6 42.5 L133.0 39.9 L144.3 37.0 L155.7 31.9 L167.0 29.7 L178.4 28.1 L189.8 22.0 L201.1 20.5 L212.5 22.4 L223.8 18.1 L235.2 17.3 L246.6 13.3 L257.9 13.8 L269.3 17.1 L280.6 10.8 L292.0 15.0" pathLength="1"/>
+                <circle class="chart__dot" cx="292" cy="15.0" r="4.5"/>
+              </svg>
+            </div>
+            <div class="chart__axis" aria-hidden="true"><span>Week 1</span><span>Week 26</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voices">
+        <figure class="voice">
+          <blockquote><p><span class="hang">&ldquo;</span>Our golden paths used to be wiki pages nobody followed. Now they're versioned templates, and rolling an upgrade out to 200 services takes an afternoon.&rdquo;</p></blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">TL</span><span><strong>Tomas Lind</strong><span class="muted">Staff Platform Engineer, Halden Bank</span></span></figcaption>
+        </figure>
+        <figure class="voice">
+          <blockquote><p><span class="hang">&ldquo;</span>Security review used to be a weekly meeting. Now it's a check that runs on every service, and the evidence for our auditors is a single export.&rdquo;</p></blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">AR</span><span><strong>Ana Ruiz</strong><span class="muted">Head of Security, Medisana</span></span></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 

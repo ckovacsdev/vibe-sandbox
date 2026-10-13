@@ -96,3 +96,75 @@ if (frame) {
   sOpen = reduce.matches ? 1 : tOpen; // start where the page actually is, without a catch-up sweep
   render();
 }
+
+// Two ways: replay the Switchyard column as a live run the first time it scrolls into view.
+// Step timings are proportional to their real minutes. Without JS (or with reduced motion)
+// every step simply shows as done.
+const race = document.querySelector('[data-race]');
+if (race && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const steps = [...race.querySelectorAll('.run--new li')];
+  const at = steps.map(li => Number(li.dataset.at));
+  const end = at[at.length - 1];
+  const clock = race.querySelector('[data-clock]');
+  const replay = race.querySelector('.race__replay');
+  const RUN_MS = 2600;  // the whole 25 minutes
+  const LEAD_MS = 400;  // first step shows as running before it completes
+  let raf = 0;
+
+  const paint = m => {
+    steps.forEach((li, i) => {
+      const state = m >= at[i] ? 'done' : (i === 0 || m >= at[i - 1]) ? 'running' : 'pending';
+      if (li.dataset.state !== state) li.dataset.state = state;
+      if (i < steps.length - 1) {
+        const fill = Math.min(1, Math.max(0, (m - at[i]) / (at[i + 1] - at[i])));
+        li.style.setProperty('--fill', fill);
+      }
+    });
+    clock.textContent = Math.max(0, Math.min(end, Math.floor(m)));
+  };
+
+  const play = () => {
+    cancelAnimationFrame(raf);
+    replay.hidden = true;
+    const start = performance.now();
+    const tick = now => {
+      const m = (now - start - LEAD_MS) / RUN_MS * end;
+      paint(m);
+      if (m < end) raf = requestAnimationFrame(tick);
+      else replay.hidden = false;
+    };
+    paint(-1);
+    raf = requestAnimationFrame(tick);
+  };
+
+  replay.addEventListener('click', play);
+
+  // Only arm the run if the visitor hasn't already scrolled past it. Trigger on the step list,
+  // not the whole panel, which is taller than a phone screen once the columns stack.
+  const list = race.querySelector('.run--new');
+  if (list.getBoundingClientRect().bottom > 0) {
+    paint(-1);
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { io.disconnect(); play(); }
+    }, { threshold: 0.6 });
+    io.observe(list);
+  } else {
+    replay.hidden = false;
+  }
+}
+
+// Customer story: draw the charts once when the card scrolls into view.
+const story = document.querySelector('[data-story]');
+if (story && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const card = story.querySelector('.story__card');
+  if (card.getBoundingClientRect().bottom > 0) {
+    story.classList.add('is-armed');
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      io.disconnect();
+      card.getBoundingClientRect(); // commit the armed state before transitioning
+      story.classList.add('is-drawn');
+    }, { threshold: 0.5 });
+    io.observe(card);
+  }
+}
